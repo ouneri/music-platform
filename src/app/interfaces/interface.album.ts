@@ -5,9 +5,9 @@ export interface Album {
   id: number;
   name: string;
   cover: string;
-  artist: Artist[];
+  artistIds: number[];
   trackIds: number[];
-  durationSec: number;
+  durationSec?: number;
 
 
 }

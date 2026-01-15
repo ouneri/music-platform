@@ -3,6 +3,7 @@ import {Artist} from './interface.artist';
 export interface Track {
   id: number;
   name: string;
-  artist: Artist[];
+  artistIds: number[];
   img: string;
+  durationSec: number;
 }
