@@ -1,0 +1,15 @@
+:host {
+  display: grid;
+  grid-template-rows: 70px 1fr 90px;
+  height: 100vh;
+  background-color: #0b0b0b;
+  color: #fff;
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 16px;
+  padding: 16px;
+  overflow: hidden;
+}
