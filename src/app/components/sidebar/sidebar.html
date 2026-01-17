@@ -7,28 +7,14 @@
     <button class="nav-item" type="button">Your Library</button>
   </nav>
 
-  <div class="sidebar-section">
+  <div class="sidebar-section" *ngFor="let p of playlists$ | async">
     <div class="section-title">Playlists</div>
     <ul class="playlist-list">
       <li class="playlist-item">
-        <img src="/8citrJxYyx7lJTk_OcR895EdtaXTYXZe7DDiK59Jw4oNp5X9-yH2yrKxbd8AYoQKSI4NPPXMknpcFKOhvhrlkpjw.jpg" alt="Late Nights cover">
+        <img [src]="p.cover" alt="Late Nights cover">
         <div class="playlist-meta">
-          <div class="playlist-title">Late Nights</div>
-          <div class="playlist-subtitle">Playlist • 32 tracks</div>
-        </div>
-      </li>
-      <li class="playlist-item">
-        <img src="/Belf-D_6l9psvgkJi7XSiRqmj50ZWf-LcUAbBjYQTtluiNRQstDcAkNOPCje4JmLn1SK0uEgpTvKKhEnkjqud0fZ.jpg" alt="Focus cover">
-        <div class="playlist-meta">
-          <div class="playlist-title">Deep Focus</div>
-          <div class="playlist-subtitle">Playlist • 18 tracks</div>
-        </div>
-      </li>
-      <li class="playlist-item">
-        <img src="/mJkSoYGQvn48y9shudkhASMpCuwlN5BLDGctEduXxR0omXzazYBhfLJ9am3BOa1gJkl1m3lLHHrtI1r6dCrf9ra8.jpg" alt="Roadtrip cover">
-        <div class="playlist-meta">
-          <div class="playlist-title">Roadtrip</div>
-          <div class="playlist-subtitle">Playlist • 24 tracks</div>
+          <div class="playlist-title">{{p.name}}</div>
+          <div class="playlist-subtitle">Playlist • {{p.trackCount}}</div>
         </div>
       </li>
     </ul>

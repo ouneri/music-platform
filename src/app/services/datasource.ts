@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {of} from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +17,7 @@ export class Datasource {
       id: 2,
       name: 'ouneri',
       listeners: 10.235,
-      avatar: 'ouner-avatar.jpg'
+      avatar: 'ouneri-avatar.jpg'
 
     }
   ];
@@ -44,7 +45,33 @@ export class Datasource {
     artistIds: [1],
     trackIds: [1, 2],
 
-  }]
+  },
+    {
+      id: 2,
+      name: 'elmorapoppintramadol2',
+      cover: '11.jpg',
+      artistIds: [1],
+      trackIds: [1, 2],
+
+    },
+    {
+      id: 3,
+      name: 'elmorapoppintramadol3',
+      cover: '22.jpg',
+      artistIds: [1, 2],
+      trackIds: [1, 2],
+
+    },
+    {
+      id: 4,
+      name: 'elmorapoppintramadol3',
+      cover: '4.jpg',
+      artistIds: [1],
+      trackIds: [1, 2],
+
+    }
+
+  ]
 
   private tracks = [{
       id: 1,
@@ -64,16 +91,16 @@ export class Datasource {
   ]
 
   getAlbums() {
-    return of ([...this.albums]);
+    return of([...this.albums]);
   }
   getPlaylists(){
-    return of ([this.playlists]);
+    return of([...this.playlists]);
   }
   getArtists(){
-    return of ([...this.artists]);
+    return of([...this.artists]);
   }
 
   getTracks() {
-    return of ([...this.tracks]);
+    return of([...this.tracks]);
   }
 }
