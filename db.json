@@ -1,0 +1,174 @@
+{
+  "artists": [
+    {
+      "id": 1,
+      "name": "ouneri",
+      "listeners": 153200,
+      "avatar": "ouneri-avatar.jpg"
+    },
+    {
+      "id": 2,
+      "name": "elmora",
+      "listeners": 98400,
+      "avatar": "elmora-avatar.jpg"
+    },
+    {
+      "id": 3,
+      "name": "rizza",
+      "listeners": 67200,
+      "avatar": "-Xd8lBDHmztpRKvqUKN5mYes9PFuPrHPpbrioDC3WGLdWsHe7nifKd258hW_ahes0PURxPy0G9Vmzw-LagawhmQ4.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Yabyjin",
+      "listeners": 81400,
+      "avatar": "BnPZfuIPtriQgJ-gT03iAU33tgyvWcg5Wg_ROkJx8VjOm-UmE7DwUiFjplpy4E_WPRz0smfFt3rJ6SsKNAVrWm43.jpg"
+    }
+  ],
+  "tracks": [
+    {
+      "id": 1,
+      "name": "Ounerism",
+      "artistIds": [1],
+      "img": "1.jpg",
+      "durationSec": 186
+    },
+    {
+      "id": 2,
+      "name": "Elmora Dreams",
+      "artistIds": [2],
+      "img": "2.jpg",
+      "durationSec": 201
+    },
+    {
+      "id": 3,
+      "name": "Rizza Nightline",
+      "artistIds": [3],
+      "img": "3.jpg",
+      "durationSec": 214
+    },
+    {
+      "id": 4,
+      "name": "Yabyjin Drift",
+      "artistIds": [4],
+      "img": "4.jpg",
+      "durationSec": 198
+    },
+    {
+      "id": 5,
+      "name": "Ouner x Elmora",
+      "artistIds": [1, 2],
+      "img": "11.jpg",
+      "durationSec": 223
+    },
+    {
+      "id": 6,
+      "name": "Rizza x Yabyjin",
+      "artistIds": [3, 4],
+      "img": "22.jpg",
+      "durationSec": 209
+    }
+  ],
+  "albums": [
+    {
+      "id": 1,
+      "name": "Ouner State",
+      "cover": "mJkSoYGQvn48y9shudkhASMpCuwlN5BLDGctEduXxR0omXzazYBhfLJ9am3BOa1gJkl1m3lLHHrtI1r6dCrf9ra8.jpg",
+      "artistIds": [1],
+      "trackIds": [1, 5]
+    },
+    {
+      "id": 2,
+      "name": "Elmora Waves",
+      "cover": "Belf-D_6l9psvgkJi7XSiRqmj50ZWf-LcUAbBjYQTtluiNRQstDcAkNOPCje4JmLn1SK0uEgpTvKKhEnkjqud0fZ.jpg",
+      "artistIds": [2],
+      "trackIds": [2]
+    },
+    {
+      "id": 3,
+      "name": "Rizza Tape",
+      "cover": "8citrJxYyx7lJTk_OcR895EdtaXTYXZe7DDiK59Jw4oNp5X9-yH2yrKxbd8AYoQKSI4NPPXMknpcFKOhvhrlkpjw.jpg",
+      "artistIds": [3],
+      "trackIds": [3, 6]
+    },
+    {
+      "id": 4,
+      "name": "Yabyjin Nights",
+      "cover": "gdPBQn7VewHVokjM2FfX8GWPGRpCPMy8OvymuseNmVveQnYOn1Jp4TtzbXXSxR8rgApUO0RiSChKvE4rNnGstkbD.jpg",
+      "artistIds": [4],
+      "trackIds": [4, 6]
+    },
+    {
+      "id": 5,
+      "name": "Ouner Sessions",
+      "cover": "pe1XZvsJlsaHO77w3BTAxTsg5HSXdtNi8Zvzqf3E1suFjw2A-POJs8C31B2ewh9eF1B0WzGarCi_tlJVYgZVHAUA.jpg",
+      "artistIds": [1],
+      "trackIds": [1, 5]
+    },
+    {
+      "id": 6,
+      "name": "Elmora Echo",
+      "cover": "s9-lhuecDGIGONw5EmyAtfCnH6EhW_k_HJggs1Y35xHnYHx-mkTTznSuo624jLfc_Zum5k7rmPpSHSb6HHROQGH-.jpg",
+      "artistIds": [2],
+      "trackIds": [2]
+    },
+    {
+      "id": 7,
+      "name": "Rizza Flow",
+      "cover": "tCXXLu9yKhqokbEl6OirZhk_CzrdJWj2rNK54RsWn8KQiVlLV9sTYZFg_l235ZL0lPNcd3Gkvaq-q4uiWj6n5kfR.jpg",
+      "artistIds": [3],
+      "trackIds": [3, 6]
+    },
+    {
+      "id": 8,
+      "name": "Yabyjin Pulse",
+      "cover": "wC2G9GYdZtch7RizIuHX_td_ekl-lCPTA14dsASGESIasD00sABlWi-vz37vedhbqgky813ylQ9xMYPNl3B1ryKv.jpg",
+      "artistIds": [4],
+      "trackIds": [4, 6]
+    }
+  ],
+  "playlists": [
+    {
+      "id": 1,
+      "name": "Late Night Mix",
+      "cover": "fxY_293DERdUkmVH9tOWptTaxGCkWqnuZ5u72ExW5I4H8SBXiNszF4BjpJKWdyqUfpc_OWbLegmSUu2BX9LoK_bE.jpg",
+      "description": "Chill picks for late sessions",
+      "trackCount": 24
+    },
+    {
+      "id": 2,
+      "name": "Deep Focus",
+      "cover": "i8O6vCmNiv3IQwQngG6d85IJ7UxrGPytIPi8tHKJaXXSM_ZWehP6UytUFmY5XergjxrjcxdkzM0Am_d0s6UShqxY.jpg",
+      "description": "Focus-friendly beats",
+      "trackCount": 18
+    },
+    {
+      "id": 3,
+      "name": "Road Mood",
+      "cover": "Kasj6RcdaGw6rG7UJiQxOzGtAlckdfVFiWYvu_oQa7-ChFwZ9h_upfWUXlPaEDKlyN8hiy4lA3kc9wb8nUpkWDVV.jpg",
+      "description": "Drive and drift",
+      "trackCount": 30
+    },
+    {
+      "id": 4,
+      "name": "Night Shift",
+      "cover": "-Xd8lBDHmztpRKvqUKN5mYes9PFuPrHPpbrioDC3WGLdWsHe7nifKd258hW_ahes0PURxPy0G9Vmzw-LagawhmQ4.jpg",
+      "description": "Low light energy",
+      "trackCount": 22
+    },
+    {
+      "id": 5,
+      "name": "Quiet Focus",
+      "cover": "BnPZfuIPtriQgJ-gT03iAU33tgyvWcg5Wg_ROkJx8VjOm-UmE7DwUiFjplpy4E_WPRz0smfFt3rJ6SsKNAVrWm43.jpg",
+      "description": "Minimal, deep and calm",
+      "trackCount": 16
+    },
+    {
+      "id": 6,
+      "name": "City Lights",
+      "cover": "gdPBQn7VewHVokjM2FfX8GWPGRpCPMy8OvymuseNmVveQnYOn1Jp4TtzbXXSxR8rgApUO0RiSChKvE4rNnGstkbD.jpg",
+      "description": "Night city vibes",
+      "trackCount": 28
+    }
+  ]
+}
