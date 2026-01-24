@@ -31,48 +31,54 @@
       "name": "Ounerism",
       "artistIds": [1],
       "img": "1.jpg",
-      "durationSec": 186
+      "durationSec": 186,
+      "audioUrl": "/audio/elmora-glamournfc2000.mp3"
     },
     {
       "id": 2,
       "name": "Elmora Dreams",
       "artistIds": [2],
       "img": "2.jpg",
-      "durationSec": 201
+      "durationSec": 201,
+      "audioUrl": "/audio/elmora, drusilla district 12 escort hunger-ПОХУЙ.mp3"
     },
     {
       "id": 3,
       "name": "Rizza Nightline",
       "artistIds": [3],
       "img": "3.jpg",
-      "durationSec": 214
+      "durationSec": 214,
+      "audioUrl": "/audio/elmora-u_.mp3"
     },
     {
       "id": 4,
       "name": "Yabyjin Drift",
       "artistIds": [4],
       "img": "4.jpg",
-      "durationSec": 198
+      "durationSec": 198,
+      "audioUrl": "/audio/ladlegard-симфония лишних +elmora.mp3"
     },
     {
       "id": 5,
-      "name": "Ouner x Elmora",
+      "name": "Ounerix Elmora",
       "artistIds": [1, 2],
       "img": "11.jpg",
-      "durationSec": 223
+      "durationSec": 223,
+      "audioUrl": "/audio/elmora - _ [audiovk.com].mp3"
     },
     {
       "id": 6,
       "name": "Rizza x Yabyjin",
       "artistIds": [3, 4],
       "img": "22.jpg",
-      "durationSec": 209
+      "durationSec": 209,
+      "audioUrl": "/audio/elmora-unknown.mp3"
     }
   ],
   "albums": [
     {
       "id": 1,
-      "name": "Ouner State",
+      "name": "Ouneri State",
       "cover": "mJkSoYGQvn48y9shudkhASMpCuwlN5BLDGctEduXxR0omXzazYBhfLJ9am3BOa1gJkl1m3lLHHrtI1r6dCrf9ra8.jpg",
       "artistIds": [1],
       "trackIds": [1, 5]
@@ -100,7 +106,7 @@
     },
     {
       "id": 5,
-      "name": "Ouner Sessions",
+      "name": "Ouneri Sessions",
       "cover": "pe1XZvsJlsaHO77w3BTAxTsg5HSXdtNi8Zvzqf3E1suFjw2A-POJs8C31B2ewh9eF1B0WzGarCi_tlJVYgZVHAUA.jpg",
       "artistIds": [1],
       "trackIds": [1, 5]

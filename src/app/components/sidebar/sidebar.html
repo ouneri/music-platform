@@ -7,14 +7,14 @@
     <button class="nav-item" type="button">Your Library</button>
   </nav>
 
-  <div class="sidebar-section" *ngFor="let p of playlists$ | async">
+  <div class="sidebar-section" >
     <div class="section-title">Playlists</div>
-    <ul class="playlist-list">
+    <ul class="playlist-list" *ngFor="let p of playlists$ | async">
       <li class="playlist-item">
         <img [src]="p.cover" alt="Late Nights cover">
         <div class="playlist-meta">
           <div class="playlist-title">{{p.name}}</div>
-          <div class="playlist-subtitle">Playlist • {{p.trackCount}}</div>
+          <div class="playlist-subtitle">Tracks • {{p.trackCount}}</div>
         </div>
       </li>
     </ul>

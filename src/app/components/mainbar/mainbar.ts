@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
 import { AsyncPipe, NgFor } from '@angular/common';
-import {combineLatest, filter, map} from 'rxjs';
+import { combineLatest, map } from 'rxjs';
 import { Datasource } from '../../services/datasource';
 import {DurationPipe} from '../../pipes/pipes.duration';
+import { SearchStore } from '../../services/search-store';
+import {PlayerStoreService} from '../../services/player-store-service';
+import {Track} from '../../interfaces/interface.track';
+
 
 
 
@@ -20,13 +24,16 @@ export class Mainbar {
   albumsWithArtists$;
   tracks$;
   tracksWithArtists$;
+  filteredAlbums$;
+  filteredTracks$;
 
 
-  constructor(private dataSource: Datasource) {
+  constructor(private dataSource: Datasource, private searchStore: SearchStore, private player: PlayerStoreService) {
     this.playlists$ = this.dataSource.getPlaylists();
     this.albums$ = this.dataSource.getAlbums();
     this.artists$ = this.dataSource.getArtists();
     this.tracks$ = this.dataSource.getTracks();
+
 
     // преобразование массива артистов в строку
     this.albumsWithArtists$ = combineLatest([this.albums$, this.artists$]).pipe(
@@ -53,8 +60,43 @@ export class Mainbar {
         }))
       )
     );
-  }
 
+    this.filteredTracks$ = combineLatest([
+      this.tracksWithArtists$,
+      this.searchStore.query$
+    ]).pipe(
+      map(([tracks, term]) => {
+        const query = (term ?? '').toString();
+        if (!query) {
+          return tracks;
+        }
+        return tracks.filter((t) =>
+          t.name.toLowerCase().includes(query) ||
+          t.artistNames.toLowerCase().includes(query)
+        );
+      })
+    );
+
+    this.filteredAlbums$ = combineLatest([
+      this.albumsWithArtists$,
+      this.searchStore.query$
+    ]).pipe(
+      map(([albums, term]) => {
+        const query = (term ?? '').toString();
+        if (!query) {
+          return albums;
+        }
+        return albums.filter((a) =>
+          a.name.toLowerCase().includes(query) ||
+          a.artistNames.toLowerCase().includes(query)
+        );
+      })
+    );
+  }
+  onSelectTrack(track: Track) {
+    this.player.setTrack(track);
+    this.player.play();
+  }
 
 }
 

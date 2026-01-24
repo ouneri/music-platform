@@ -1,9 +1,8 @@
 .player {
   display: grid;
-  grid-template-columns: 1fr 1.5fr 1fr;
+  grid-template-columns: 240px minmax(360px, 1fr) 240px;
   align-items: center;
-  gap: 16px;
-  padding: 12px 24px;
+  padding: 12px 24px 16px;
   background: #0f0f0f;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -33,43 +32,144 @@
 }
 
 .player-center {
+  width: min(720px, 100%);
   display: grid;
   gap: 8px;
   justify-items: center;
+  justify-self: center;
 }
 
 .player-controls {
   display: flex;
-  gap: 12px;
+  gap: 18px;
+  align-items: center;
 }
 
 .player-controls button {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+  width: 28px;
+  height: 28px;
   border: none;
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff;
+  background: transparent;
+  color: #ffffff;
   cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  opacity: 0.9;
+  transition: opacity 0.15s ease, transform 0.15s ease;
 }
 
-.player-controls .play {
-  background: #7cffae;
-  color: #0a0a0a;
+.player-controls button svg {
+  width: 16px;
+  height: 16px;
+  fill: #ffffff;
+  display: block;
+}
+
+.player-controls button:focus-visible {
+  outline: 1px solid rgba(255, 255, 255, 0.7);
+  outline-offset: 3px;
+}
+
+.player-controls button:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.player-controls button:active {
+  transform: translateY(0);
+}
+
+.player-controls .ghost {
+  opacity: 0.6;
+  font-size: 13px;
+}
+
+.player-controls .ghost.active {
+  opacity: 1;
+}
+
+.play-toggle {
+  --color: #ffffff;
+  --size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  font-size: var(--size);
+  user-select: none;
+  fill: var(--color);
+  background: transparent;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: none;
+}
+
+.play-toggle::before,
+.play-toggle::after {
+  content: none;
+}
+
+.play-toggle .play {
+  position: absolute;
+  animation: keyframes-fill 0.3s;
+}
+
+.play-toggle .pause {
+  position: absolute;
+  display: none;
+  animation: keyframes-fill 0.3s;
+}
+
+.play-toggle svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.play-toggle input:checked ~ .play {
+  display: none;
+}
+
+.play-toggle input:checked ~ .pause {
+  display: block;
+}
+
+.play-toggle input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+@keyframes keyframes-fill {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
 }
 
 .player-progress {
   display: grid;
   grid-template-columns: 40px 1fr 40px;
   align-items: center;
-  gap: 8px;
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.6);
+  gap: 10px;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
   width: 100%;
 }
 
 .player-progress input[type="range"] {
   width: 100%;
+  height: 4px;
+  accent-color: #ffffff;
 }
 
 .player-extra {
@@ -77,18 +177,70 @@
   justify-content: flex-end;
   align-items: center;
   gap: 12px;
+  justify-self: end;
 }
 
 .player-extra button {
-  width: 34px;
-  height: 34px;
+  width: 30px;
+  height: 30px;
   border-radius: 8px;
-  border: none;
-  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: transparent;
   color: #fff;
   cursor: pointer;
 }
 
 .player-extra input[type="range"] {
-  width: 120px;
+  width: 110px;
+  height: 4px;
+  accent-color: #ffffff;
+}
+
+
+.setting-btn {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background-color: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: none;
+}
+.bar {
+  width: 70%;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 2px;
+}
+.bar::before {
+  content: "";
+  width: 2px;
+  height: 2px;
+  background-color: #ffffff;
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  transition: all 0.3s;
+  box-shadow: none;
+}
+.bar1::before {
+  transform: translateX(-4px);
+}
+.bar2::before {
+  transform: translateX(4px);
+}
+.setting-btn:hover .bar1::before {
+  transform: translateX(4px);
+}
+.setting-btn:hover .bar2::before {
+  transform: translateX(-4px);
 }

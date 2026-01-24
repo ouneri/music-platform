@@ -16,7 +16,7 @@
       <button class="link-button" type="button">Show all</button>
     </div>
     <div class="card-grid">
-      <article class="album-card" *ngFor="let a of albumsWithArtists$ | async">
+      <article class="album-card" *ngFor="let a of filteredAlbums$ | async">
         <img [src]="a.cover" alt="Night Drive cover">
         <div class="card-title">{{a.name}}</div>
         <div class="card-subtitle">{{a.artistNames}}</div>
@@ -30,7 +30,7 @@
       <button class="link-button" type="button">Show all</button>
     </div>
     <div class="list">
-      <div class="list-item" *ngFor="let t of tracksWithArtists$ | async">
+      <div class="list-item" (click)="onSelectTrack(t)" *ngFor="let t of filteredTracks$ | async">
         <img [src]="t.img" alt="Echoes cover">
         <div class="list-meta">
           <div class="list-title">{{t.name}}</div>

@@ -6,4 +6,5 @@ export interface Track {
   artistIds: number[];
   img: string;
   durationSec: number;
+  audioUrl?: string;
 }

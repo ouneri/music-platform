@@ -8,9 +8,16 @@
 
 .app-shell {
   display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 16px;
+  grid-template-columns: 300px 1fr;
+  gap: 20px;
   padding: 16px;
-  overflow: hidden !important;
+  overflow: hidden;
+  min-height: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+app-sidebar,
+app-mainbar {
   min-height: 0;
 }
