@@ -10,7 +10,7 @@
   <div class="sidebar-section" >
     <div class="section-title">Playlists</div>
     <ul class="playlist-list" *ngFor="let p of playlists$ | async">
-      <li class="playlist-item">
+      <li class="playlist-item" (click)="selectPlaylist(p.id)">
         <img [src]="p.cover" alt="Late Nights cover">
         <div class="playlist-meta">
           <div class="playlist-title">{{p.name}}</div>

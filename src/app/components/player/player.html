@@ -2,7 +2,7 @@
   <div class="player-track">
     <img [src]="track.img" alt="Now playing cover">
     <div class="track-meta">
-      <div class="track-title">{{ track.name }}</div>
+      <div class="track-title" (click)="openInfo()">{{ track.name }}</div>
       <div class="track-artist">{{ track.artistNames }}</div>
     </div>
   </div>

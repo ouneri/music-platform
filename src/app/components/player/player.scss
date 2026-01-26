@@ -24,6 +24,8 @@
 .track-title {
   font-size: 14px;
   font-weight: 600;
+  cursor: pointer;
+  user-select: none;
 }
 
 .track-artist {

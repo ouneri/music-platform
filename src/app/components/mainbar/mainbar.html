@@ -10,13 +10,13 @@
     </div>
   </section>
 
-  <section class="row">
+  <section class="row" *ngIf="!(selectedAlbumId$ | async)">
     <div class="row-header">
       <h2>Made for you</h2>
       <button class="link-button" type="button">Show all</button>
     </div>
     <div class="card-grid">
-      <article class="album-card" *ngFor="let a of filteredAlbums$ | async">
+      <article class="album-card" *ngFor="let a of filteredAlbums$ | async" (click)="selectAlbumId(a.id)">
         <img [src]="a.cover" alt="Night Drive cover">
         <div class="card-title">{{a.name}}</div>
         <div class="card-subtitle">{{a.artistNames}}</div>
@@ -24,13 +24,13 @@
     </div>
   </section>
 
-  <section class="row">
+  <section class="row" *ngIf="!(selectedAlbumId$ | async) && !(selectedPlaylistId$ | async)">
     <div class="row-header">
       <h2>Recently played</h2>
       <button class="link-button" type="button">Show all</button>
     </div>
     <div class="list">
-      <div class="list-item" (click)="onSelectTrack(t)" *ngFor="let t of filteredTracks$ | async">
+      <div class="list-item" [class.active]="(currentTrack$ | async)?.id === t.id" (click)="onSelectTrack(t)" *ngFor="let t of filteredTracks$ | async">
         <img [src]="t.img" alt="Echoes cover">
         <div class="list-meta">
           <div class="list-title">{{t.name}}</div>
@@ -40,4 +40,66 @@
       </div>
     </div>
   </section>
+
+  <div class="playlist-modal-backdrop" *ngIf="selectedAlbum$ | async as album" (click)="selectedAlbumId$.next(null)">
+    <div class="playlist-modal" (click)="$event.stopPropagation()">
+      <div class="playlist-modal-header">
+        <img [src]="album.cover" alt="Album cover">
+        <div class="playlist-modal-meta">
+          <div class="playlist-modal-eyebrow">Album</div>
+          <div class="playlist-modal-title">{{album.name}}</div>
+        </div>
+        <button class="link-button" type="button" (click)="selectedAlbumId$.next(null)">Close</button>
+      </div>
+      <div class="list">
+        <div class="list-item" *ngFor="let t of selectedAlbumTracks$ | async" (click)="onSelectTrack(t)">
+          <img [src]="t.img" alt="Track cover">
+          <div class="list-meta">
+            <div class="list-title">{{t.name}}</div>
+            <div class="list-subtitle">{{t.artistNames}}</div>
+          </div>
+          <div class="list-time">{{t.durationSec | duration}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="playlist-modal-backdrop" *ngIf="selectedPlaylist$ | async as playlist" (click)="clearPlaylist()">
+    <div class="playlist-modal" (click)="$event.stopPropagation()">
+      <div class="playlist-modal-header">
+        <img [src]="playlist.cover" alt="Playlist cover">
+        <div class="playlist-modal-meta">
+          <div class="playlist-modal-eyebrow">Playlist</div>
+          <div class="playlist-modal-title">{{playlist.name}}</div>
+          <div class="playlist-modal-subtitle">Tracks • {{playlist.trackCount}}</div>
+        </div>
+        <button class="link-button" type="button" (click)="clearPlaylist()">Close</button>
+      </div>
+      <div class="list">
+        <div class="list-item" [class.active]="(currentTrack$ | async)?.id === t.id" (click)="onSelectTrack(t)" *ngFor="let t of selectedPlaylistTracks$ | async">
+          <img [src]="t.img" alt="Track cover">
+          <div class="list-meta">
+            <div class="list-title">{{t.name}}</div>
+            <div class="list-subtitle">{{t.artistNames}}</div>
+          </div>
+          <div class="list-time">{{t.durationSec | duration }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="playlist-modal-backdrop" *ngIf="openInfo$ | async">
+    <div class="playlist-modal" (click)="$event.stopPropagation()">
+      <div class="playlist-modal-header">
+        <img [src]="(currentTrackWithArtists$ | async)?.img" alt="Track cover">
+        <div class="playlist-modal-meta">
+          <div class="playlist-modal-eyebrow">Now Playing</div>
+          <div class="playlist-modal-title">{{ (currentTrackWithArtists$ | async)?.name }}</div>
+          <div class="playlist-modal-subtitle">{{ (currentTrackWithArtists$ | async)?.artistNames }}</div>
+        </div>
+        <button class="link-button" type="button" (click)="closeInfo()">Close</button>
+      </div>
+    </div>
+  </div>
+
 </main>

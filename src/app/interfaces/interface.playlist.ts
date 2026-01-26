@@ -4,5 +4,6 @@ export interface Playlist {
   cover: string;
   description: string;
   trackCount: number;
+  trackIds: number[];
 
 }

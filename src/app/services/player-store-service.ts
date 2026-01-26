@@ -20,6 +20,7 @@ export class PlayerStoreService {
   currentTime$ = new BehaviorSubject<number>(0);
   duration$ = new BehaviorSubject<number>(0);
   volume$ = new BehaviorSubject<number>(0.7);
+  openInfo$ = new BehaviorSubject<boolean>(false);
 
   constructor() {
     const saved = localStorage.getItem('playerVolume');
@@ -40,6 +41,13 @@ export class PlayerStoreService {
       : -1;
   }
 
+  openInfo(){
+    this.openInfo$.next(true);
+  }
+
+  closeInfo(){
+    this.openInfo$.next(false);
+  }
 
 
   setTrack(track: Track) {

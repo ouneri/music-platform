@@ -73,6 +73,10 @@ export class Player {
     this.player.prev()
   }
 
+  openInfo(){
+    this.player.openInfo();
+  }
+
   nextTrack() {
 
     this.player.next()
